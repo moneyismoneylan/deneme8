@@ -44,10 +44,10 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if stage == "threads":
         try:
             concurrent_threads = int(msg)
-            await context.bot.send_message(chat_id=update.effective_chat.id, text=f"🚀 Başlatılıyor:
-URL: {target_url}
-Toplam istek: {total_requests}
-Thread sayısı: {concurrent_threads}")
+            await context.bot.send_message(
+                chat_id=update.effective_chat.id,
+                text=f"🚀 Başlatılıyor:\nURL: {target_url}\nToplam istek: {total_requests}\nThread sayısı: {concurrent_threads}"
+            )
             await run_requests(context.bot)
             stage = "url"
         except ValueError:
