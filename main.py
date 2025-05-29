@@ -21,14 +21,13 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     if target_url is None:
         target_url = msg
-        await context.bot.send_message(chat_id=update.effective_chat.id, text="📥 Hedef URL kaydedildi.
-Kaç istek/saniye yapılacağını yazın:")
+        await context.bot.send_message(chat_id=update.effective_chat.id, text="📥 Hedef URL kaydedildi. Kaç istek/saniye yapılacağını yazın:")
         return
 
     if requests_per_second == 0:
         try:
             requests_per_second = int(msg)
-           await context.bot.send_message(chat_id=update.effective_chat.id, text="📥 Hedef URL kaydedildi.\nKaç istek/saniye yapılacağını yazın:")
+            await context.bot.send_message(chat_id=update.effective_chat.id, text=f"🚀 Başlatılıyor: {requests_per_second} req/s → {target_url}")
             asyncio.create_task(send_requests(context.bot))
         except ValueError:
             await context.bot.send_message(chat_id=update.effective_chat.id, text="❌ Geçerli bir sayı girin.")
