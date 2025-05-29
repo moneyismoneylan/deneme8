@@ -6,7 +6,7 @@ import os
 # Ortam değişkenlerinden çek (Railway'e özel)
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 CHAT_ID = int(os.getenv("CHAT_ID"))
-TARGET_URL = os.getenv("TARGET_URL", "https://webhook.site/faaecff4-5b7f-47b5-b1fa-fbe1fdc178a2")
+TARGET_URL = os.getenv("TARGET_URL", "https://webhook.site/8d491bca-da81-4c68-ab42-eb19d8ef6607")
 REQUESTS_PER_SECOND = int(os.getenv("REQUESTS_PER_SECOND", 50))
 INTERVAL = 1 / REQUESTS_PER_SECOND
 
